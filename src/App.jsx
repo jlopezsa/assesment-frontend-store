@@ -1,9 +1,11 @@
 import './App.css';
+import MainRouter from './routes/MainRouter';
 
 function App() {
   return (
     <div>
-      <h1>Assestment frontend New</h1>
+      <h1>Hello world</h1>
+      <MainRouter />
     </div>
   );
 }
