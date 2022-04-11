@@ -1,3 +1,106 @@
+# Isntall libraries:
+
+Following is shown the requiered libraries in the project.
+
+- eslint:
+
+  - Execute the command: `npm install -D eslint`
+  - Rule confiuration: `npx eslint --init`
+
+    Rules confiuration is:
+
+    ```
+    ❯ npx eslint --init
+    You can also run this command directly using 'npm init @eslint/config'.
+    ✔ How would you like to use ESLint? · style
+    ✔ What type of modules does your project use? · esm
+    ✔ Which framework does your project use? · react
+    ✔ Does your project use TypeScript? · No / Yes
+    ✔ Where does your code run? · browser
+    ✔ How would you like to define a style for your project? · guide
+    ✔ Which style guide do you want to follow? · airbnb
+    ✔ What format do you want your config file to be in? · JSON
+    Checking peerDependencies of eslint-config-airbnb@latest
+    The config that you've selected requires the following dependencies:
+
+    eslint-plugin-react@^7.28.0 eslint-config-airbnb@latest eslint@^7.32.0 || ^8.2.0 eslint-plugin-import@^2.25.3 eslint-plugin-jsx-a11y@^6.5.1 eslint-plugin-react-hooks@^4.3.0
+    ✔ Would you like to install them now with npm? · No / Yes
+    Installing eslint-plugin-react@^7.28.0, eslint-config-airbnb@latest, eslint@^7.32.0 || ^8.2.0, eslint-plugin-import@^2.25.3, eslint-plugin-jsx-a11y@^6.5.1, eslint-plugin-react-hooks@^4.3.0
+    ```
+
+  - In the created file `.eslintrc.json` add the following rules:
+    ```json
+    "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectExpression": {
+          "consistent": true,
+          "multiline": true
+        },
+        "ObjectPattern": {
+          "consistent": true,
+          "multiline": true
+        },
+        "ImportDeclaration": {
+          "consistent": true,
+          "multiline": true
+        },
+        "ExportDeclaration": {
+          "multiline": true,
+          "minProperties": 3
+        }
+      }
+    ]
+    }
+    ```
+
+## Vscode configuration
+
+- create the `.vscode` folder and the `settings.json` file - in the `.vscode/settings.json` file set the following sentence
+  `json { "editor.formatOnSave": true, }`
+
+- Install `EditorConfig for VS Code`
+- create the `.editorconfig` file with the following sentences:
+
+  ```
+  root = true
+  # Unix-style newlines with a newline ending every file
+  [*]
+  end_of_line = lf
+  insert_final_newline = true
+
+  charset = utf-8
+  trim_trailing_whitespace= true
+  insert_final_newline=true
+
+  indent_style=space
+  indent_size=2
+  ```
+
+- Install `ESLint` in vscode
+- Install `Prettier - Code formatter` in vscode
+  - Create the `.prettierrc` file in the project root. Here may be set some rules such as:
+  ```json
+  {
+    "printWidth": 80
+  }
+  ```
+
+## Routes confiuration:
+
+- Install react router dom with `npm install react-router-dom@6`
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
