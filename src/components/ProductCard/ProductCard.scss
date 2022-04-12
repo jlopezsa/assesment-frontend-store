@@ -1,0 +1,54 @@
+@import '../../App.scss';
+
+.contProduct {
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 500px;
+  display: grid;
+  grid-template-columns: 250px 250px;
+  grid-template-rows: 250px 50px 100px;
+  grid-template-areas:
+    'imagemCell imagemCell'
+    'descriptionCell descriptionCell'
+    'timeCell buttonCell';
+
+  &__image {
+    grid-area: imagemCell;
+    width: 500px;
+    height: 250px;
+    text-align: center;
+    &--product {
+      width: auto;
+      height: 100%;
+    }
+  }
+  &__description {
+    grid-area: descriptionCell;
+    text-align: center;
+    font-size: $body1-desktop;
+    font-weight: bold;
+  }
+  &__time {
+    grid-area: timeCell;
+    font-size: $body1-desktop;
+    font-weight: bold;
+    margin-left: 20px;
+  }
+  &__button {
+    grid-area: buttonCell;
+    text-align: right;
+    margin-right: 20px;
+    &--push {
+      background-color: #288cd8;
+      color: white;
+      width: 125px;
+      height: 30px;
+      font-size: $body1-desktop;
+      border-radius: 10px;
+    }
+    &--push:hover {
+      background-color: white;
+      color: #288cd8;
+    }
+  }
+}
