@@ -50,5 +50,13 @@
       background-color: white;
       color: #288cd8;
     }
+    &--link {
+      color: white;
+      text-decoration: none;
+    }
+    &--link:hover {
+      color: #288cd8;
+      text-decoration: none;
+    }
   }
 }
