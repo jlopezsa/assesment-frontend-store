@@ -2,6 +2,8 @@
 
 Following is shown the requiered libraries in the project.
 
+- Sass: ` npm install node-sass`
+
 - eslint:
 
   - Execute the command: `npm install -D eslint`
