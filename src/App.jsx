@@ -5,12 +5,10 @@ import MainRouter from './routes/MainRouter';
 
 function App() {
   return (
-    <div>
-      <BrowserRouter>
-        <NavBar />
-        <MainRouter />
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <NavBar />
+      <MainRouter />
+    </BrowserRouter>
   );
 }
 
