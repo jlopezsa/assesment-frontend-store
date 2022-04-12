@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import { ROUTE_PRODUCT_DETAIL } from '../../routes/routes';
 import './ProductCard.scss';
 
 function ProductCard() {
@@ -14,7 +16,7 @@ function ProductCard() {
       </div>
       <div className="contProduct__button">
         <button className="contProduct__button--push" type="button">
-          Go To Detail
+          <Link className="contProduct__button--link" id="product-detail" to={ROUTE_PRODUCT_DETAIL}>Go To Detail</Link>
         </button>
       </div>
     </div>
