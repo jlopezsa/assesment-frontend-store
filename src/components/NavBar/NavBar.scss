@@ -1,8 +1,30 @@
 @import '../../App.scss';
 
+.contNavBar {
+  margin: 0px;
+}
+
 .horizontalBar {
+  margin: 0px;
   background-color: $aqua-marine-1;
-  color: $aqua-marine-9;
-  font-size: $headline5-desktop;
   height: 100px;
+  &__list {
+    margin: 0px;
+    font-size: $headline5-desktop;
+    height: 100px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    &--link {
+      width: 150px;
+      color: $aqua-marine-9;
+      text-align: center;
+      text-decoration: none;
+    }
+    &--link:hover {
+      background-color: $aqua-marine-9;
+      color: $aqua-marine-1;
+      border-radius: 20px;
+    }
+  }
 }
