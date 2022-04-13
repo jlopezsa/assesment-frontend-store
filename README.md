@@ -69,7 +69,8 @@ Following is shown the requiered libraries in the project.
 
 ## Vscode configuration
 
-- create the `.vscode` folder and the `settings.json` file - in the `.vscode/settings.json` file set the following sentence
+- create the `.vscode` folder and the `settings.json` file
+- in the `.vscode/settings.json` file set the following sentence
   `json { "editor.formatOnSave": true, }`
 
 - Install `EditorConfig for VS Code`
@@ -99,9 +100,28 @@ Following is shown the requiered libraries in the project.
   }
   ```
 
-## Routes confiuration:
+## Routes configuration:
 
 - Install react router dom with `npm install react-router-dom@6`
+- Create the 'routes' folder with the files `routes.js` and `MainRouter.js`.
+  The rotes in the project (defined in the routes.js) are:
+  ```json
+  export const ROUTE_HOME = '/';
+  export const ROUTE_PRODUCT_DETAIL = './detail';
+  export const ROUTE_ABOUT = './about';
+  ```
+
+## Create the mains pages
+
+The project consist of tree "pages": `home`, `detail` and `about`. The pages are create in the `pages` folder, through the following files `HomePage.jsx`, `ProductDetailPageg.jsx` and `AboutPage.jsx`, respectively.
+
+## Create components
+
+The components are create in the `components` folder and they are:
+
+### NavBar
+
+### ProductCard
 
 # Getting Started with Create React App
 
