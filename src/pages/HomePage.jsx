@@ -18,6 +18,7 @@ function HomePage() {
     <div className="containerHome">
       <div className="containerHome__title">
         <h1>Products</h1>
+
       </div>
       <div className="containerHome__productlist">
         {
