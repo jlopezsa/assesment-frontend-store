@@ -1,15 +1,17 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { ROUTE_PRODUCT_DETAIL } from '../../routes/routes';
 import './ProductCard.scss';
 
-function ProductCard() {
+function ProductCard(props) {
+  const { productsDetails } = props;
   return (
     <div className="contProduct">
       <div className="contProduct__image">
-        <img className="contProduct__image--product" src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg" alt="" />
+        <img className="contProduct__image--product" src={productsDetails.image} alt="" />
       </div>
       <div className="contProduct__description">
-        Mens Casual Slim Fit
+        {productsDetails.title}
       </div>
       <div className="contProduct__time">
         time
@@ -22,5 +24,12 @@ function ProductCard() {
     </div>
   );
 }
+
+ProductCard.propTypes = {
+  productsDetails: PropTypes.shape({
+    image: PropTypes.string,
+    title: PropTypes.string,
+  }).isRequired,
+};
 
 export default ProductCard;
