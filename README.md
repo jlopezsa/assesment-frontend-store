@@ -123,6 +123,18 @@ The components are create in the `components` folder and they are:
 
 ### ProductCard
 
+- Instal Proptypes through the following sentence `npm install prop-types`.
+  The propTypes are defined as (see `./components/ProductCard/ProductCard.jsx`):
+  ```
+  ProductCard.propTypes = {
+  productsDetails: PropTypes.shape({
+    image: PropTypes.string,
+    title: PropTypes.string,
+  }).isRequired,
+  };
+  ```
+  where `ProductCard` is the componnet that receives the props, `productsDetails` is the const used to destructuring, and `image` and `title` are the properties of the props received.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -193,3 +205,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+```
+
+```

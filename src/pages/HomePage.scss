@@ -1,0 +1,17 @@
+@import '../App.scss';
+
+.containerHome {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1600px;
+  &__title {
+    text-align: center;
+  }
+  &__productlist {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-bottom: 20px;
+  }
+}
