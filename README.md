@@ -1,73 +1,92 @@
-# Isntall libraries:
+# Table of contents
+
+1. [Introduction](#introduction)
+2. [Exercise problem](#exercice-problem)
+3. [Libraries and packages installation](#libraries)
+4. [VSCode configuration](#vscode)
+5. [Routes configuration](#routes-configuration-a-name%22routes%22a)
+6. [Components](#create-components-a-name%22components%22a)
+
+<a name="introduction"></a>
+
+# 1. Introduction
+
+<a name="exercice-problem"></a>
+
+# 2. Exercise problem
+
+# 3 Isntall libraries <a name="libraries"></a>
 
 Following is shown the requiered libraries in the project.
 
-- Sass: ` npm install node-sass`
+## 3.1 Sass<a name="sass"></a>:
 
-- eslint:
+` npm install node-sass`
 
-  - Execute the command: `npm install -D eslint`
-  - Rule confiuration: `npx eslint --init`
+## 3.2 Eslint<a name="eslint"></a>:
 
-    Rules confiuration is:
+- Execute the command: `npm install -D eslint`
+- Rule confiuration: `npx eslint --init`
 
-    ```
-    ❯ npx eslint --init
-    You can also run this command directly using 'npm init @eslint/config'.
-    ✔ How would you like to use ESLint? · style
-    ✔ What type of modules does your project use? · esm
-    ✔ Which framework does your project use? · react
-    ✔ Does your project use TypeScript? · No / Yes
-    ✔ Where does your code run? · browser
-    ✔ How would you like to define a style for your project? · guide
-    ✔ Which style guide do you want to follow? · airbnb
-    ✔ What format do you want your config file to be in? · JSON
-    Checking peerDependencies of eslint-config-airbnb@latest
-    The config that you've selected requires the following dependencies:
+  Rules confiuration is:
 
-    eslint-plugin-react@^7.28.0 eslint-config-airbnb@latest eslint@^7.32.0 || ^8.2.0 eslint-plugin-import@^2.25.3 eslint-plugin-jsx-a11y@^6.5.1 eslint-plugin-react-hooks@^4.3.0
-    ✔ Would you like to install them now with npm? · No / Yes
-    Installing eslint-plugin-react@^7.28.0, eslint-config-airbnb@latest, eslint@^7.32.0 || ^8.2.0, eslint-plugin-import@^2.25.3, eslint-plugin-jsx-a11y@^6.5.1, eslint-plugin-react-hooks@^4.3.0
-    ```
+  ```
+  ❯ npx eslint --init
+  You can also run this command directly using 'npm init @eslint/config'.
+  ✔ How would you like to use ESLint? · style
+  ✔ What type of modules does your project use? · esm
+  ✔ Which framework does your project use? · react
+  ✔ Does your project use TypeScript? · No / Yes
+  ✔ Where does your code run? · browser
+  ✔ How would you like to define a style for your project? · guide
+  ✔ Which style guide do you want to follow? · airbnb
+  ✔ What format do you want your config file to be in? · JSON
+  Checking peerDependencies of eslint-config-airbnb@latest
+  The config that you've selected requires the following dependencies:
 
-  - In the created file `.eslintrc.json` add the following rules:
-    ```json
-    "rules": {
-    "react/jsx-filename-extension": [
-      1,
-      {
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
-      }
-    ],
-    "react/react-in-jsx-scope": "off",
-    "object-curly-newline": [
-      "error",
-      {
-        "ObjectExpression": {
-          "consistent": true,
-          "multiline": true
-        },
-        "ObjectPattern": {
-          "consistent": true,
-          "multiline": true
-        },
-        "ImportDeclaration": {
-          "consistent": true,
-          "multiline": true
-        },
-        "ExportDeclaration": {
-          "multiline": true,
-          "minProperties": 3
-        }
-      }
-    ]
+  eslint-plugin-react@^7.28.0 eslint-config-airbnb@latest eslint@^7.32.0 || ^8.2.0 eslint-plugin-import@^2.25.3 eslint-plugin-jsx-a11y@^6.5.1 eslint-plugin-react-hooks@^4.3.0
+  ✔ Would you like to install them now with npm? · No / Yes
+  Installing eslint-plugin-react@^7.28.0, eslint-config-airbnb@latest, eslint@^7.32.0 || ^8.2.0, eslint-plugin-import@^2.25.3, eslint-plugin-jsx-a11y@^6.5.1, eslint-plugin-react-hooks@^4.3.0
+  ```
+
+- In the created file `.eslintrc.json` add the following rules:
+  ```json
+  "rules": {
+  "react/jsx-filename-extension": [
+    1,
+    {
+      "extensions": [
+        ".js",
+        ".jsx"
+      ]
     }
-    ```
+  ],
+  "react/react-in-jsx-scope": "off",
+  "object-curly-newline": [
+    "error",
+    {
+      "ObjectExpression": {
+        "consistent": true,
+        "multiline": true
+      },
+      "ObjectPattern": {
+        "consistent": true,
+        "multiline": true
+      },
+      "ImportDeclaration": {
+        "consistent": true,
+        "multiline": true
+      },
+      "ExportDeclaration": {
+        "multiline": true,
+        "minProperties": 3
+      }
+    }
+  ]
+  }
+  ```
 
-## Vscode configuration
+# 4. Vscode configuration <a name="vscode"></a>
 
 - create the `.vscode` folder and the `settings.json` file
 - in the `.vscode/settings.json` file set the following sentence
@@ -100,7 +119,7 @@ Following is shown the requiered libraries in the project.
   }
   ```
 
-## Routes configuration:
+# 5. Routes configuration <a name="routes"></a>
 
 - Install react router dom with `npm install react-router-dom@6`
 - Create the 'routes' folder with the files `routes.js` and `MainRouter.js`.
@@ -111,17 +130,17 @@ Following is shown the requiered libraries in the project.
   export const ROUTE_ABOUT = './about';
   ```
 
-## Create the mains pages
+# 6. Create the mains pages <a name="mainPages"></a>
 
 The project consist of tree "pages": `home`, `detail` and `about`. The pages are create in the `pages` folder, through the following files `HomePage.jsx`, `ProductDetailPageg.jsx` and `AboutPage.jsx`, respectively.
 
-## Create components
+# 7. Create components <a name="components"></a>
 
 The components are create in the `components` folder and they are:
 
-### NavBar
+## 7.1 NavBar<a name="navBar"></a>
 
-### ProductCard
+## 7.2 ProductCard <a name="productCard"></a>
 
 - Instal Proptypes through the following sentence `npm install prop-types`.
   The propTypes are defined as (see `./components/ProductCard/ProductCard.jsx`):
@@ -134,6 +153,10 @@ The components are create in the `components` folder and they are:
   };
   ```
   where `ProductCard` is the componnet that receives the props, `productsDetails` is the const used to destructuring, and `image` and `title` are the properties of the props received.
+
+## 7.3 Countdown <a name="countDown"></a>
+
+The countdown component was implemented following the instructions of the site ["How to create a countdown timer using React HooksHow to create a countdown timer using React Hooks"](https://blog.greenroots.info/how-to-create-a-countdown-timer-using-react-hooks)
 
 # Getting Started with Create React App
 
