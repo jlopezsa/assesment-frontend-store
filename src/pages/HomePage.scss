@@ -13,5 +13,8 @@
     flex-wrap: wrap;
     justify-content: space-around;
     padding-bottom: 20px;
+    li {
+      list-style-type: none;
+    }
   }
 }

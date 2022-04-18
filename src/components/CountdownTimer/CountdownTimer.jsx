@@ -2,12 +2,12 @@
 
 import React from 'react';
 import { useCountdown } from '../useCountdown';
-
+import './CountdownTimer.scss'
 const ExpiredNotice = () => {
   return (
     <div className="expired-notice">
       <span>Expired!!!</span>
-      <p>Please select a future date and time.</p>
+      <p>Please select another product!</p>
     </div>
   );
 };
@@ -15,7 +15,7 @@ const ExpiredNotice = () => {
 const DateTimeDisplay = ({ value, type, isDanger }) => {
   return (
     <div className={isDanger ? 'countdown danger' : 'countdown'}>
-      <p>{value}</p>
+      <p>{value}{type !== ' '?':':''}</p>
       <span>{type}</span>
     </div>
   );
@@ -27,15 +27,17 @@ const ShowCounter = ({ days, hours, minutes, seconds }) => {
         <DateTimeDisplay value={days} type={''} isDanger={days <= 3} />
         <DateTimeDisplay value={hours} type={''} isDanger={false} />
         <DateTimeDisplay value={minutes} type={''} isDanger={false} />
-        <DateTimeDisplay value={seconds} type={''} isDanger={false} />
+        <DateTimeDisplay value={seconds} type={' '} isDanger={false} />
     </div>
   );
 };
 
-const CountdownTimer = ({ targetDate }) => {
+const CountdownTimer = ({ targetDate, setIsTimeOver }) => {
+
   const [days, hours, minutes, seconds] = useCountdown(targetDate);
 
   if (days + hours + minutes + seconds <= 0) {
+    setIsTimeOver(true);
     return <ExpiredNotice />;
   } else {
     return (
