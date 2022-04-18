@@ -20,13 +20,15 @@ function HomePage() {
         <h1>Products</h1>
 
       </div>
-      <div className="containerHome__productlist">
+      <ul className="containerHome__productlist">
         {
           products.map((item) => (
-            <ProductCard productsDetails={item} />
+            <li key={item.title}>
+              <ProductCard productsDetails={item} />
+            </li>
           ))
         }
-      </div>
+      </ul>
     </div>
   );
 }

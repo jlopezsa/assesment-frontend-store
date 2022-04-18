@@ -7,9 +7,7 @@
 5. [Routes configuration](#routes-configuration-a-name%22routes%22a)
 6. [Components](#create-components-a-name%22components%22a)
 
-<a name="introduction"></a>
-
-# 1. Introduction
+# 1. Introduction<a name="introduction"></a>
 
 <a name="exercice-problem"></a>
 
@@ -136,7 +134,7 @@ The project consist of tree "pages": `home`, `detail` and `about`. The pages are
 
 # 7. Create components <a name="components"></a>
 
-The components are create in the `components` folder and they are:
+The components are created in the `components` folder and they are NavBar, ProductCard and CountDown.
 
 ## 7.1 NavBar<a name="navBar"></a>
 
