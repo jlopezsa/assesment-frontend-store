@@ -12,17 +12,17 @@ function ProductCard(props) {
   const [ isTimeOver, setIsTimeOver ] = useState(false);
   const [ timeLimit, setTimeLimit ] = useState('');
 
-  useEffect(()=>{
-    // pasar esto a la homepage y a cada compoente se le envia (props) el dateTimeAfterThreeDays
-    const setData = () => {
-      const max = 0.001;
-      const min = 0.00020;
-      const randomTime = Math.random() * (max - min) + min;
+  const max = 0.1;
+  const min = 0;
+  const randomTime = Math.random() * (max - min) + min;
 
-      const THREE_DAYS_IN_MS = randomTime * 24 * 60 * 60 * 1000;
-      const NOW_IN_MS = new Date().getTime();
-      const dateTimeAfterThreeDays = NOW_IN_MS + THREE_DAYS_IN_MS;
-      setTimeLimit(dateTimeAfterThreeDays);
+  const RANDOM_START_TIME = randomTime * 60 * 60 * 1000;
+  const NOW_IN_MS = new Date().getTime();
+  const dateTimeAfterRandomTime = NOW_IN_MS + RANDOM_START_TIME;
+
+  useEffect(()=>{
+    const setData = () => {
+      setTimeLimit(dateTimeAfterRandomTime);
     }
     setData();
   },[]);
