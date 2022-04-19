@@ -8,11 +8,19 @@ import {
   ROUTE_ABOUT,
 } from './routes';
 
+const productDetails = {
+  name: 'camisa',
+  value: 1200,
+};
+
 function MainRouter() {
   return (
     <Routes>
       <Route path={ROUTE_HOME} element={<HomePage />} />
-      <Route path={ROUTE_PRODUCT_DETAIL} element={<ProductDetailPage />} />
+      <Route
+        path={ROUTE_PRODUCT_DETAIL}
+        element={<ProductDetailPage productDetails={productDetails} />}
+      />
       <Route path={ROUTE_ABOUT} element={<AboutPage />} />
     </Routes>
   );
