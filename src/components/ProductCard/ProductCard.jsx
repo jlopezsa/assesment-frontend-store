@@ -5,25 +5,27 @@ import PropTypes from 'prop-types';
 import { ROUTE_PRODUCT_DETAIL, ROUTE_HOME } from '../../routes/routes';
 import './ProductCard.scss';
 import CountdownTimer from '../CountdownTimer/CountdownTimer';
+import { useEffect } from 'react';
 
 function ProductCard(props) {
   const { productsDetails } = props;
   const [ isTimeOver, setIsTimeOver ] = useState(false);
-  const ROUTE_LINK = ROUTE_PRODUCT_DETAIL;
+  const [ timeLimit, setTimeLimit ] = useState('');
 
-  const max = 0.002;
-  const min = 0.0005;
-  const randomTime = Math.random() * (max - min) + min;
+  useEffect(()=>{
+    // pasar esto a la homepage y a cada compoente se le envia (props) el dateTimeAfterThreeDays
+    const setData = () => {
+      const max = 0.001;
+      const min = 0.00020;
+      const randomTime = Math.random() * (max - min) + min;
 
-  const THREE_DAYS_IN_MS = randomTime * 24 * 60 * 60 * 1000;
-  const NOW_IN_MS = new Date().getTime();
-  const dateTimeAfterThreeDays = NOW_IN_MS + THREE_DAYS_IN_MS;
-
-  const handlerClick = () => {
-    if(isTimeOver){
-      const ROUTE_LINK = ROUTE_HOME;
+      const THREE_DAYS_IN_MS = randomTime * 24 * 60 * 60 * 1000;
+      const NOW_IN_MS = new Date().getTime();
+      const dateTimeAfterThreeDays = NOW_IN_MS + THREE_DAYS_IN_MS;
+      setTimeLimit(dateTimeAfterThreeDays);
     }
-  }
+    setData();
+  },[]);
 
   return (
     <div className="contProduct">
@@ -34,14 +36,14 @@ function ProductCard(props) {
         {productsDetails.title}
       </div>
       <div className="contProduct__time">
-        <CountdownTimer targetDate={dateTimeAfterThreeDays} setIsTimeOver={setIsTimeOver} />
+        <CountdownTimer targetDate={timeLimit} setIsTimeOver={setIsTimeOver} />
       </div>
       <div className="contProduct__button">
-        <Link className="contProduct__button--link" id="product-detail" to={ROUTE_LINK}>
-          <button className="contProduct__button--push" type="button" onClick={handlerClick}>
-            Click to Detail
-          </button>
+      <button className="contProduct__button--push" type="submit">
+        <Link className="contProduct__button--link" to={isTimeOver? ROUTE_HOME : ROUTE_PRODUCT_DETAIL }>
+          Click to Detail
         </Link>
+      </button>
       </div>
     </div>
   );
