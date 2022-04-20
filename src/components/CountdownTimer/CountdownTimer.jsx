@@ -1,30 +1,31 @@
-/* eslint-disable */
-
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useCountdown } from '../useCountdown';
-import './CountdownTimer.scss'
+import './CountdownTimer.scss';
 
-const DateTimeDisplay = ({ value, type }) => {
+function DateTimeDisplay({ value, type }) {
   return (
     <div>
-      <p>{value}{type !== ' '?':':''}</p>
+      <p>
+        {value}
+        {type !== ' ' ? ':' : ''}
+      </p>
       <span>{type}</span>
     </div>
   );
-};
+}
 
-const ShowCounter = ({ hours, minutes, seconds }) => {
+function ShowCounter({ hours, minutes, seconds }) {
   return (
     <div className="show-counter">
-        <DateTimeDisplay value={hours} type={''} />
-        <DateTimeDisplay value={minutes} type={''} />
-        <DateTimeDisplay value={seconds} type={' '} />
+      <DateTimeDisplay value={hours} type="" />
+      <DateTimeDisplay value={minutes} type="" />
+      <DateTimeDisplay value={seconds} type={' '} />
     </div>
   );
-};
+}
 
-const CountdownTimer = ({ targetDate, setIsTimeOver }) => {
-
+function CountdownTimer({ targetDate, setIsTimeOver }) {
   const [hours, minutes, seconds] = useCountdown(targetDate);
   if (hours + minutes + seconds <= 0) {
     setIsTimeOver(true);
@@ -34,15 +35,30 @@ const CountdownTimer = ({ targetDate, setIsTimeOver }) => {
         <p>Please select another product!</p>
       </div>
     );
-  } else {
-    return (
-      <ShowCounter
-        hours={hours}
-        minutes={minutes}
-        seconds={seconds}
-      />
-    );
   }
+  return (
+    <ShowCounter
+      hours={hours}
+      minutes={minutes}
+      seconds={seconds}
+    />
+  );
+}
+
+DateTimeDisplay.propTypes = {
+  value: PropTypes.number.isRequired,
+  type: PropTypes.number.isRequired,
+};
+
+ShowCounter.propTypes = {
+  hours: PropTypes.number.isRequired,
+  minutes: PropTypes.number.isRequired,
+  seconds: PropTypes.number.isRequired,
+};
+
+CountdownTimer.propTypes = {
+  targetDate: PropTypes.number.isRequired,
+  setIsTimeOver: PropTypes.number.isRequired,
 };
 
 export default CountdownTimer;
