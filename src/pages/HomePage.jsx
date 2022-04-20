@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import './HomePage.scss';
 import ProductCard from '../components/ProductCard/ProductCard';
 import { getAllProducts } from '../services/products';
 
-function HomePage() {
+function HomePage(props) {
+  const { onHandleChange } = props;
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -24,7 +26,7 @@ function HomePage() {
         {
           products.map((item) => (
             <li key={item.title}>
-              <ProductCard productsDetails={item} />
+              <ProductCard productsDetails={item} onHandleChange2={onHandleChange} />
             </li>
           ))
         }
@@ -32,5 +34,11 @@ function HomePage() {
     </div>
   );
 }
+
+HomePage.propTypes = {
+  onHandleChange: PropTypes.shape({
+    onHandleChange: PropTypes.func,
+  }).isRequired,
+};
 
 export default HomePage;

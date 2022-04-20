@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+import { useState } from 'react';
 import HomePage from '../pages/HomePage';
 import ProductDetailPage from '../pages/ProductDetailPage';
 import AboutPage from '../pages/AboutPage';
@@ -8,15 +9,11 @@ import {
   ROUTE_ABOUT,
 } from './routes';
 
-const productDetails = {
-  name: 'camisa',
-  value: 1200,
-};
-
 function MainRouter() {
+  const [productDetails, setProductDetail] = useState({});
   return (
     <Routes>
-      <Route path={ROUTE_HOME} element={<HomePage />} />
+      <Route path={ROUTE_HOME} element={<HomePage onHandleChange={setProductDetail} />} />
       <Route
         path={ROUTE_PRODUCT_DETAIL}
         element={<ProductDetailPage productDetails={productDetails} />}
