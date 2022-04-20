@@ -1,16 +1,14 @@
-/* eslint-disable */
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { ROUTE_PRODUCT_DETAIL, ROUTE_HOME } from '../../routes/routes';
 import './ProductCard.scss';
 import CountdownTimer from '../CountdownTimer/CountdownTimer';
-import { useEffect } from 'react';
 
 function ProductCard(props) {
-  const { productsDetails } = props;
-  const [ isTimeOver, setIsTimeOver ] = useState(false);
-  const [ timeLimit, setTimeLimit ] = useState('');
+  const { productsDetails, onHandleChange2 } = props;
+  const [isTimeOver, setIsTimeOver] = useState(false);
+  const [timeLimit, setTimeLimit] = useState('');
 
   const max = 0.1;
   const min = 0;
@@ -20,12 +18,16 @@ function ProductCard(props) {
   const NOW_IN_MS = new Date().getTime();
   const dateTimeAfterRandomTime = NOW_IN_MS + RANDOM_START_TIME;
 
-  useEffect(()=>{
+  useEffect(() => {
     const setData = () => {
       setTimeLimit(dateTimeAfterRandomTime);
-    }
+    };
     setData();
-  },[]);
+  }, []);
+
+  const handlerClick = () => {
+    onHandleChange2(productsDetails);
+  };
 
   return (
     <div className="contProduct">
@@ -39,11 +41,11 @@ function ProductCard(props) {
         <CountdownTimer targetDate={timeLimit} setIsTimeOver={setIsTimeOver} />
       </div>
       <div className="contProduct__button">
-      <button className="contProduct__button--push" type="submit">
-        <Link className="contProduct__button--link" to={isTimeOver? ROUTE_HOME : ROUTE_PRODUCT_DETAIL }>
-          Click to Detail
-        </Link>
-      </button>
+        <button className="contProduct__button--push" type="submit" onClick={handlerClick}>
+          <Link className="contProduct__button--link" to={isTimeOver ? ROUTE_HOME : ROUTE_PRODUCT_DETAIL}>
+            Click to Detail
+          </Link>
+        </button>
       </div>
     </div>
   );
@@ -54,6 +56,7 @@ ProductCard.propTypes = {
     image: PropTypes.string,
     title: PropTypes.string,
   }).isRequired,
+  onHandleChange2: PropTypes.func.isRequired,
 };
 
 export default ProductCard;
