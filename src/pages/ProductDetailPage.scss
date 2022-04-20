@@ -1,0 +1,56 @@
+@import '../App.scss';
+
+.contDetails {
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  &__title-page {
+    text-align: center;
+    font-size: $headline3-desktop;
+    border: 1px solid white;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    height: 100px;
+    background-color: black;
+    color: white;
+    &--title {
+      font-size: $headline4-desktop;
+    }
+    &--category {
+      font-size: $headline5-desktop;
+    }
+  }
+  &__image {
+    width: 700px;
+    height: auto;
+    text-align: center;
+    &--product {
+      width: auto;
+      height: 100%;
+    }
+  }
+  &__description {
+    font-size: $headline4-desktop;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  &__footer {
+    font-size: $headline4-desktop;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    color: white;
+    &--price {
+    }
+    &--rate {
+    }
+  }
+}
