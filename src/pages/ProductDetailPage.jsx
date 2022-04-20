@@ -1,33 +1,41 @@
 import PropTypes from 'prop-types';
+import './ProductDetailPage.scss';
 
 function ProductDetailPage(props) {
   const { productDetails } = props;
   return (
     <div className="contDetails">
-      <section>
-        ProductDetailPage
-      </section>
-      <div>
-        {productDetails.title}
+      <div className="contDetails__title-page">
+        <h2>
+          Product Detail
+        </h2>
       </div>
-      <div>
-        {productDetails.category}
+      <div className="contDetails__header">
+        <div className="contDetails__header--title">
+          {productDetails.title}
+        </div>
+        <div className="contDetails__header--category">
+          Category:
+          <br />
+          {productDetails.category}
+        </div>
       </div>
-      <div>
-        <img src={productDetails.image} alt="imageProduct" />
+      <div className="contDetails__image">
+        <img className="contDetails__image--product" src={productDetails.image} alt="imageProduct" />
       </div>
-      <div>
+      <div className="contDetails__description">
+        <hr />
         {productDetails.description}
       </div>
-      <div>
-        {productDetails.price}
+      <div className="contDetails__footer">
+        <div className="contDetails__footer--price">
+          {`Price:   ${productDetails.price}`}
+        </div>
+        <div className="contDetails__footer--rate">
+          {`Rate: ${productDetails.rating.rate}`}
+        </div>
       </div>
-      <div>
-        {productDetails.rating.rate}
-      </div>
-
     </div>
-
   );
 }
 

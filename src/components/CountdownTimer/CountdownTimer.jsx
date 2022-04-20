@@ -47,7 +47,7 @@ function CountdownTimer({ targetDate, setIsTimeOver }) {
 
 DateTimeDisplay.propTypes = {
   value: PropTypes.number.isRequired,
-  type: PropTypes.number.isRequired,
+  type: PropTypes.string.isRequired,
 };
 
 ShowCounter.propTypes = {
@@ -58,7 +58,7 @@ ShowCounter.propTypes = {
 
 CountdownTimer.propTypes = {
   targetDate: PropTypes.number.isRequired,
-  setIsTimeOver: PropTypes.number.isRequired,
+  setIsTimeOver: PropTypes.func.isRequired,
 };
 
 export default CountdownTimer;
