@@ -27,7 +27,7 @@ function ShowCounter({ hours, minutes, seconds }) {
 
 function CountdownTimer({ targetDate, setIsTimeOver }) {
   const [hours, minutes, seconds] = useCountdown(targetDate);
-  if (hours + minutes + seconds <= 0) {
+  if (hours + minutes + seconds < 0) {
     setIsTimeOver(true);
     return (
       <div className="expired-notice">

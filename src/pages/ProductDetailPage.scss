@@ -10,7 +10,7 @@
   &__title-page {
     text-align: center;
     font-size: $headline3-desktop;
-    border: 1px solid white;
+    border: 2px solid white;
   }
   &__header {
     display: flex;
@@ -29,11 +29,12 @@
   }
   &__image {
     width: 700px;
-    height: auto;
+    height: 600px;
     text-align: center;
     &--product {
+      display: block;
       width: auto;
-      height: 100%;
+      height: 50%;
     }
   }
   &__description {
@@ -49,8 +50,12 @@
     background-color: black;
     color: white;
     &--price {
+      padding-top: 20px;
+      padding-bottom: 20px;
     }
     &--rate {
+      padding-top: 20px;
+      padding-bottom: 20px;
     }
   }
 }
