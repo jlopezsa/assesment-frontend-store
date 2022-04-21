@@ -10,7 +10,6 @@
   &__title-page {
     text-align: center;
     font-size: $headline3-desktop;
-    border: 2px solid white;
   }
   &__header {
     display: flex;
@@ -29,12 +28,12 @@
   }
   &__image {
     width: 700px;
-    height: 600px;
+    height: auto;
     text-align: center;
     &--product {
-      display: block;
-      width: auto;
-      height: 50%;
+      object-fit: contain;
+      width: 75%;
+      // height: 75%;
     }
   }
   &__description {
