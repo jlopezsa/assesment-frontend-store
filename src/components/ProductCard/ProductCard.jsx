@@ -8,7 +8,6 @@ import CountdownTimer from '../CountdownTimer/CountdownTimer';
 function ProductCard(props) {
   const { productsDetails, onHandleChange2 } = props;
   const [isTimeOver, setIsTimeOver] = useState(false);
-  const [timeLimit, setTimeLimit] = useState('');
 
   const max = 0.1;
   const min = 0;
@@ -18,6 +17,7 @@ function ProductCard(props) {
   const NOW_IN_MS = new Date().getTime();
   const dateTimeAfterRandomTime = NOW_IN_MS + RANDOM_START_TIME;
 
+  const [timeLimit, setTimeLimit] = useState(dateTimeAfterRandomTime);
   useEffect(() => {
     const setData = () => {
       setTimeLimit(dateTimeAfterRandomTime);

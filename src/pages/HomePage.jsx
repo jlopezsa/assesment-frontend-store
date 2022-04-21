@@ -36,9 +36,7 @@ function HomePage(props) {
 }
 
 HomePage.propTypes = {
-  onHandleChange: PropTypes.shape({
-    onHandleChange: PropTypes.func,
-  }).isRequired,
-};
+  onHandleChange: PropTypes.func,
+}.isRequired;
 
 export default HomePage;
