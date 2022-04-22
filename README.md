@@ -12,7 +12,7 @@
 
 ![fishy](./src/figures/flex-box-media-query-v2.gif)
 
-# 2 Isntall libraries <a name="libraries"></a>
+# 2 Install libraries <a name="libraries"></a>
 
 Following is shown the requiered libraries in the project.
 
