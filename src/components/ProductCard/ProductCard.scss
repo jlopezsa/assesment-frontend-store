@@ -39,7 +39,7 @@
     grid-area: buttonCell;
     text-align: right;
     margin-right: 20px;
-    &--push {
+    &--push-on {
       background-color: #288cd8;
       color: white;
       width: 125px;
@@ -47,16 +47,27 @@
       font-size: $body1-desktop;
       border-radius: 10px;
     }
-    &--push:hover {
+    &--push-on:hover {
       background-color: white;
       color: #288cd8;
     }
-    &--link {
+    &--push-off {
+      background-color: $aqua-marine-9;
+      width: 125px;
+      height: 30px;
+      font-size: $body1-desktop;
+      border-radius: 10px;
+    }
+    &--link-on {
       color: white;
       text-decoration: none;
     }
-    &--link:hover {
+    &--link-on:hover {
       color: #288cd8;
+      text-decoration: none;
+    }
+    &--link-off {
+      color: $aqua-marine-5;
       text-decoration: none;
     }
   }
