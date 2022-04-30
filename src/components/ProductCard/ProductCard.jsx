@@ -41,9 +41,9 @@ function ProductCard(props) {
         <CountdownTimer targetDate={timeLimit} setIsTimeOver={setIsTimeOver} />
       </div>
       <div className="contProduct__button">
-        <button className="contProduct__button--push" type="submit" onClick={handlerClick}>
-          <Link className="contProduct__button--link" to={isTimeOver ? ROUTE_HOME : ROUTE_PRODUCT_DETAIL}>
-            Click to Detail
+        <button className={isTimeOver ? 'contProduct__button--push-off' : 'contProduct__button--push-on'} type="submit" onClick={handlerClick} disabled={isTimeOver}>
+          <Link className={isTimeOver ? 'contProduct__button--link-off' : 'contProduct__button--link-on'} to={isTimeOver ? ROUTE_HOME : ROUTE_PRODUCT_DETAIL}>
+            {isTimeOver ? 'Expired time' : 'Click to Detail'}
           </Link>
         </button>
       </div>
